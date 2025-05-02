@@ -1,0 +1,65 @@
+Untitled37: перевести в формат csv, в бинарный, увидеть срез по строкам, поставить вместо индекса, среднее, медианное, фильтр, начинается с буквы *, значение NaN и как его заменить, сортировать, посчитать количество на T, F, groupby группировка, соединение данных, убрать столб или строку
+https://colab.research.google.com/drive/11KsiOX2u0d6ad_kvS6AyeN5AyIxQQCEx#scrollTo=FRLNTBCz86fi
+
+Untitled1 Пассажиры Титаника. Манипулляции + графики
+https://colab.research.google.com/drive/1_04uB9zI9kb83sqZDFLNMm-a98-b3R3r#scrollTo=3O0QcouWRyFF
+
+Untitled2 Эксперимент с учениками
+https://colab.research.google.com/drive/1Qy4uPChdzxJTG9_XN8f9R4TvuQ4ccF5w#scrollTo=AhSyUILu89xT
+
+Нормализация с графиками
+https://colab.research.google.com/drive/1aC5m8Hd-8xQJrcdPczmsDsmEfTUmnkPn?authuser=0#scrollTo=7TYj4Lm3A5Ps
+
+Multiindex
+https://colab.research.google.com/drive/1X0jrDjYaqtX7FqI69sN8BUzhRXo3yqin?authuser=0
+
+Преобразование типов
+https://colab.research.google.com/drive/15f6u-Gp605BFE4eqb8SulOdmq9YXD14R?authuser=0#scrollTo=0Xx5nBJA00Pl
+
+Работа со строками
+https://colab.research.google.com/drive/1-smk8bBRKLfHNmBzWCwk3uzGY2f9dkDE#scrollTo=XN9ThP889_zF
+
+Работа с датами
+https://colab.research.google.com/drive/1IDNtFA_dw7M05czeRP8ONEdzAc8oiFWp#scrollTo=MKJMwHDHAb45
+
+# Создание Series из списка
+s = pd.Series([10, 20, 30, 40])
+print(s)
+# Создание Series с пользовательским индексом
+s = pd.Series([10, 20, 30], index=["a", "b", "c"])
+print(s)
+
+# Создание DataFrame из словаря
+data = {
+    "Name": ["Alice", "Bob", "Charlie"],
+    "Age": [25, 30, 35],
+    "City": ["New York", "Los Angeles", "Chicago"]
+}
+df = pd.DataFrame(data)
+print(df)
+
+# Создание DataFrame из списка списков
+data = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+df = pd.DataFrame(data, columns=["A", "B", "C"])
+print(df)
+
+Просмотр данных:
+# Первые 5 строк
+print(df.head())
+# Последние 5 строк
+print(df.tail())
+# Размерность
+print(df.shape)
+# Типы данных
+print(df.dtypes)
+# Общая информация о DataFrame
+print(df.info())
+# Статистика по данным
+print(df.describe())
+
+# Проверка на пропуски
+print(df.isnull().sum())
+# Заполнение пропущенных значений
+df["Age"] = df["Age"].fillna(0)
+# Удаление строк с пропусками
+df = df.dropna()
